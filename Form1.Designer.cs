@@ -111,6 +111,7 @@
             txtVectorA_y.Name = "txtVectorA_y";
             txtVectorA_y.Size = new Size(50, 27);
             txtVectorA_y.TabIndex = 5;
+            txtVectorA_y.TextChanged += txtVectorA_y_TextChanged;
             // 
             // label5
             // 
@@ -148,6 +149,7 @@
             txtVectorB_x.Name = "txtVectorB_x";
             txtVectorB_x.Size = new Size(50, 27);
             txtVectorB_x.TabIndex = 9;
+            txtVectorB_x.TextChanged += txtVectorB_x_TextChanged;
             // 
             // txtVectorB_y
             // 
@@ -155,6 +157,7 @@
             txtVectorB_y.Name = "txtVectorB_y";
             txtVectorB_y.Size = new Size(50, 27);
             txtVectorB_y.TabIndex = 10;
+            txtVectorB_y.TextChanged += txtVectorB_y_TextChanged;
             // 
             // label8
             // 
