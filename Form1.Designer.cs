@@ -28,34 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
+            components = new System.ComponentModel.Container();
+            cmbOperation = new ComboBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtVectorA_x = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtVectorA_y = new TextBox();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtVectorB_x = new TextBox();
+            txtVectorB_y = new TextBox();
             label8 = new Label();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            txtLengthA = new TextBox();
+            txtLengthB = new TextBox();
+            txtResult = new TextBox();
             label9 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // cmbOperation
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Сложение", "Вычитание", "Скалярное произведение", "Векторное произведение" });
-            comboBox1.Location = new Point(33, 62);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 0;
-            comboBox1.Text = "Сложение";
+            cmbOperation.FormattingEnabled = true;
+            cmbOperation.Items.AddRange(new object[] { "Сложение", "Вычитание", "Скалярное произведение", "Векторное произведение" });
+            cmbOperation.Location = new Point(33, 62);
+            cmbOperation.Name = "cmbOperation";
+            cmbOperation.Size = new Size(151, 28);
+            cmbOperation.TabIndex = 0;
+            cmbOperation.Text = "Сложение";
             // 
             // label1
             // 
@@ -67,12 +70,13 @@
             label1.TabIndex = 1;
             label1.Text = "(";
             // 
-            // textBox1
+            // txtVectorA_x
             // 
-            textBox1.Location = new Point(207, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(50, 27);
-            textBox1.TabIndex = 2;
+            txtVectorA_x.Location = new Point(207, 41);
+            txtVectorA_x.Name = "txtVectorA_x";
+            txtVectorA_x.Size = new Size(50, 27);
+            txtVectorA_x.TabIndex = 2;
+            txtVectorA_x.TextChanged += txtVectorA_x_TextChanged;
             // 
             // label2
             // 
@@ -101,12 +105,12 @@
             label4.TabIndex = 4;
             label4.Text = ")";
             // 
-            // textBox2
+            // txtVectorA_y
             // 
-            textBox2.Location = new Point(280, 41);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(50, 27);
-            textBox2.TabIndex = 5;
+            txtVectorA_y.Location = new Point(280, 41);
+            txtVectorA_y.Name = "txtVectorA_y";
+            txtVectorA_y.Size = new Size(50, 27);
+            txtVectorA_y.TabIndex = 5;
             // 
             // label5
             // 
@@ -138,19 +142,19 @@
             label7.TabIndex = 6;
             label7.Text = "(";
             // 
-            // textBox3
+            // txtVectorB_x
             // 
-            textBox3.Location = new Point(207, 93);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(50, 27);
-            textBox3.TabIndex = 9;
+            txtVectorB_x.Location = new Point(207, 93);
+            txtVectorB_x.Name = "txtVectorB_x";
+            txtVectorB_x.Size = new Size(50, 27);
+            txtVectorB_x.TabIndex = 9;
             // 
-            // textBox4
+            // txtVectorB_y
             // 
-            textBox4.Location = new Point(280, 93);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(50, 27);
-            textBox4.TabIndex = 10;
+            txtVectorB_y.Location = new Point(280, 93);
+            txtVectorB_y.Name = "txtVectorB_y";
+            txtVectorB_y.Size = new Size(50, 27);
+            txtVectorB_y.TabIndex = 10;
             // 
             // label8
             // 
@@ -161,26 +165,26 @@
             label8.TabIndex = 11;
             label8.Text = "Длина вектора";
             // 
-            // textBox5
+            // txtLengthA
             // 
-            textBox5.Location = new Point(368, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 12;
+            txtLengthA.Location = new Point(368, 41);
+            txtLengthA.Name = "txtLengthA";
+            txtLengthA.Size = new Size(125, 27);
+            txtLengthA.TabIndex = 12;
             // 
-            // textBox6
+            // txtLengthB
             // 
-            textBox6.Location = new Point(368, 94);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 13;
+            txtLengthB.Location = new Point(368, 94);
+            txtLengthB.Name = "txtLengthB";
+            txtLengthB.Size = new Size(125, 27);
+            txtLengthB.TabIndex = 13;
             // 
-            // textBox7
+            // txtResult
             // 
-            textBox7.Location = new Point(190, 144);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(158, 27);
-            textBox7.TabIndex = 14;
+            txtResult.Location = new Point(190, 144);
+            txtResult.Name = "txtResult";
+            txtResult.Size = new Size(158, 27);
+            txtResult.TabIndex = 14;
             // 
             // label9
             // 
@@ -192,52 +196,58 @@
             label9.TabIndex = 15;
             label9.Text = "Результат";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(520, 191);
             Controls.Add(label9);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
+            Controls.Add(txtResult);
+            Controls.Add(txtLengthB);
+            Controls.Add(txtLengthA);
             Controls.Add(label8);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(txtVectorB_y);
+            Controls.Add(txtVectorB_x);
             Controls.Add(label5);
             Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(textBox2);
+            Controls.Add(txtVectorA_y);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtVectorA_x);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbOperation);
             Name = "Form1";
             Text = "Калькулятор векторов";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox cmbOperation;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtVectorA_x;
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtVectorA_y;
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtVectorB_x;
+        private TextBox txtVectorB_y;
         private Label label8;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox txtLengthA;
+        private TextBox txtLengthB;
+        private TextBox txtResult;
         private Label label9;
+        private ErrorProvider errorProvider1;
     }
 }
