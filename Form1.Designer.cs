@@ -47,6 +47,10 @@
             txtResult = new TextBox();
             label9 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            label10 = new Label();
+            label11 = new Label();
+            txtVectorA_z = new TextBox();
+            txtVectorB_z = new TextBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +58,7 @@
             // 
             cmbOperation.FormattingEnabled = true;
             cmbOperation.Items.AddRange(new object[] { "Сложение", "Вычитание", "Скалярное произведение", "Векторное произведение" });
-            cmbOperation.Location = new Point(33, 62);
+            cmbOperation.Location = new Point(33, 42);
             cmbOperation.Name = "cmbOperation";
             cmbOperation.Size = new Size(151, 28);
             cmbOperation.TabIndex = 0;
@@ -99,7 +103,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(325, 33);
+            label4.Location = new Point(401, 33);
             label4.Name = "label4";
             label4.Size = new Size(23, 35);
             label4.TabIndex = 4;
@@ -117,7 +121,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F);
-            label5.Location = new Point(325, 85);
+            label5.Location = new Point(397, 86);
             label5.Name = "label5";
             label5.Size = new Size(23, 35);
             label5.TabIndex = 8;
@@ -162,7 +166,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(368, 9);
+            label8.Location = new Point(430, 9);
             label8.Name = "label8";
             label8.Size = new Size(112, 20);
             label8.TabIndex = 11;
@@ -170,14 +174,14 @@
             // 
             // txtLengthA
             // 
-            txtLengthA.Location = new Point(368, 41);
+            txtLengthA.Location = new Point(430, 41);
             txtLengthA.Name = "txtLengthA";
             txtLengthA.Size = new Size(125, 27);
             txtLengthA.TabIndex = 12;
             // 
             // txtLengthB
             // 
-            txtLengthB.Location = new Point(368, 94);
+            txtLengthB.Location = new Point(430, 94);
             txtLengthB.Name = "txtLengthB";
             txtLengthB.Size = new Size(125, 27);
             txtLengthB.TabIndex = 13;
@@ -203,11 +207,51 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 15F);
+            label10.Location = new Point(328, 93);
+            label10.Name = "label10";
+            label10.Size = new Size(20, 35);
+            label10.TabIndex = 17;
+            label10.Text = ",";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 15F);
+            label11.Location = new Point(328, 41);
+            label11.Name = "label11";
+            label11.Size = new Size(20, 35);
+            label11.TabIndex = 16;
+            label11.Text = ",";
+            // 
+            // txtVectorA_z
+            // 
+            txtVectorA_z.Location = new Point(354, 42);
+            txtVectorA_z.Name = "txtVectorA_z";
+            txtVectorA_z.Size = new Size(50, 27);
+            txtVectorA_z.TabIndex = 18;
+            txtVectorA_z.TextChanged += txtVectorA_z_TextChanged;
+            // 
+            // txtVectorB_z
+            // 
+            txtVectorB_z.Location = new Point(354, 93);
+            txtVectorB_z.Name = "txtVectorB_z";
+            txtVectorB_z.Size = new Size(50, 27);
+            txtVectorB_z.TabIndex = 19;
+            txtVectorB_z.TextChanged += txtVectorB_z_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 191);
+            ClientSize = new Size(613, 191);
+            Controls.Add(txtVectorB_z);
+            Controls.Add(txtVectorA_z);
+            Controls.Add(label10);
+            Controls.Add(label11);
             Controls.Add(label9);
             Controls.Add(txtResult);
             Controls.Add(txtLengthB);
@@ -252,5 +296,9 @@
         private TextBox txtResult;
         private Label label9;
         private ErrorProvider errorProvider1;
+        private TextBox txtVectorB_z;
+        private TextBox txtVectorA_z;
+        private Label label10;
+        private Label label11;
     }
 }
