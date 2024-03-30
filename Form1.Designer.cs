@@ -80,7 +80,7 @@
             txtVectorA_x.Name = "txtVectorA_x";
             txtVectorA_x.Size = new Size(50, 27);
             txtVectorA_x.TabIndex = 2;
-            txtVectorA_x.TextChanged += txtVectorA_x_TextChanged;
+            txtVectorA_x.TextChanged += OnValueChanged;
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             txtVectorA_y.Name = "txtVectorA_y";
             txtVectorA_y.Size = new Size(50, 27);
             txtVectorA_y.TabIndex = 5;
-            txtVectorA_y.TextChanged += txtVectorA_y_TextChanged;
+            txtVectorA_y.TextChanged += OnValueChanged;
             // 
             // label5
             // 
@@ -153,7 +153,7 @@
             txtVectorB_x.Name = "txtVectorB_x";
             txtVectorB_x.Size = new Size(50, 27);
             txtVectorB_x.TabIndex = 9;
-            txtVectorB_x.TextChanged += txtVectorB_x_TextChanged;
+            txtVectorB_x.TextChanged += OnValueChanged;
             // 
             // txtVectorB_y
             // 
@@ -161,7 +161,7 @@
             txtVectorB_y.Name = "txtVectorB_y";
             txtVectorB_y.Size = new Size(50, 27);
             txtVectorB_y.TabIndex = 10;
-            txtVectorB_y.TextChanged += txtVectorB_y_TextChanged;
+            txtVectorB_y.TextChanged += OnValueChanged;
             // 
             // label8
             // 
@@ -190,7 +190,7 @@
             // 
             txtResult.Location = new Point(190, 144);
             txtResult.Name = "txtResult";
-            txtResult.Size = new Size(158, 27);
+            txtResult.Size = new Size(214, 27);
             txtResult.TabIndex = 14;
             // 
             // label9
@@ -233,7 +233,7 @@
             txtVectorA_z.Name = "txtVectorA_z";
             txtVectorA_z.Size = new Size(50, 27);
             txtVectorA_z.TabIndex = 18;
-            txtVectorA_z.TextChanged += txtVectorA_z_TextChanged;
+            txtVectorA_z.TextChanged += OnValueChanged;
             // 
             // txtVectorB_z
             // 
@@ -241,7 +241,7 @@
             txtVectorB_z.Name = "txtVectorB_z";
             txtVectorB_z.Size = new Size(50, 27);
             txtVectorB_z.TabIndex = 19;
-            txtVectorB_z.TextChanged += txtVectorB_z_TextChanged;
+            txtVectorB_z.TextChanged += OnValueChanged;
             // 
             // Form1
             // 
