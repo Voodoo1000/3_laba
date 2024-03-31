@@ -5,11 +5,21 @@ namespace _3_laba
         public Form1()
         {
             InitializeComponent();
+
+            // Установка ComboBox только для выбора элементов из списка
+            cmbOperation.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            // Установка текстовых полей только для чтения
+            txtLengthA.ReadOnly = true;
+            txtLengthB.ReadOnly = true;
+            txtResult.ReadOnly = true;
         }
+        // Метод для выполнения расчетов
         private void Calculate()
         {
             try
             {
+                // Получение значений компонентов из текстовых полей
                 var a_x = double.Parse(txtVectorA_x.Text);
                 var a_y = double.Parse(txtVectorA_y.Text);
                 var a_z = double.Parse(txtVectorA_z.Text);
@@ -17,11 +27,14 @@ namespace _3_laba
                 var b_y = double.Parse(txtVectorB_y.Text);
                 var b_z = double.Parse(txtVectorB_z.Text);
 
+                // Создание векторов из введенных значений
                 var vectorA = new Vector(a_x, a_y, a_z);
                 var vectorB = new Vector(b_x, b_y, b_z);
 
+                // Переменная для хранения результата операции
                 Vector operationVectors = new Vector(0, 0, 0);
 
+                // Выполнение операции в зависимости от выбранного элемента в ComboBox
                 switch (cmbOperation.Text)
                 {
                     case "Сложение":
@@ -45,6 +58,7 @@ namespace _3_laba
                         break;
                 }
 
+                // Вычисление длин векторов и вывод результатов
                 double lengthVectorA = Vector.Length(vectorA);
                 double lengthVectorB = Vector.Length(vectorB);
 
@@ -53,13 +67,22 @@ namespace _3_laba
             }
             catch (FormatException)
             {
+                // Если произошла ошибка, очищаем текстовые поля и выводим сообщение в диалоговом окне
+                txtVectorA_x.Text = "";
+                txtVectorA_y.Text = "";
+                txtVectorA_z.Text = "";
+                txtVectorB_x.Text = "";
+                txtVectorB_y.Text = "";
+                txtVectorB_z.Text = "";
 
+                MessageBox.Show("Ошибка: неверный формат ввода", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // Обработчик события изменения значений в компонентах
         private void OnValueChanged(object sender, EventArgs e)
         {
-            Calculate();
+            Calculate(); // Вызываем метод Calculate для выполнения расчетов при изменении значений в компонентах
         }
     }
 }
