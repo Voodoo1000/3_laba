@@ -42,15 +42,6 @@ namespace _3_laba
             return new Vector(newX, newY, newZ);
         }
 
-        public static Vector operator *(Vector a, double number)
-        {
-            return new Vector(a.x * number, a.y * number, a.z * number);
-        }
-        public static Vector operator /(Vector a, double number)
-        {
-            return new Vector(a.x / number, a.y / number, a.z / number);
-        }
-
         public static double Length(Vector a)
         {
             return Math.Round(Math.Sqrt(Math.Pow(a.x, 2) + Math.Pow(a.y, 2) + Math.Pow(a.z, 2)), 4);
