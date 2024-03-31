@@ -54,10 +54,7 @@ namespace _3_laba
 
         public static String VectorProd(Vector a, Vector b)
         {
-            double firstPart = a.y * b.z - a.z * b.y;
-            double secondPart = a.z * b.x - a.x * b.z;
-            double thirdPart = a.x * b.y - a.y * b.x;
-            return String.Format("{0}*i + {1}*j + {2}*k", firstPart, secondPart, thirdPart);
+            return String.Format("{0}*i + {1}*j + {2}*k", a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
         }
     }
 }

@@ -67,15 +67,7 @@ namespace _3_laba
             }
             catch (FormatException)
             {
-                // Если произошла ошибка, очищаем текстовые поля и выводим сообщение в диалоговом окне
-                txtVectorA_x.Text = "";
-                txtVectorA_y.Text = "";
-                txtVectorA_z.Text = "";
-                txtVectorB_x.Text = "";
-                txtVectorB_y.Text = "";
-                txtVectorB_z.Text = "";
-
-                MessageBox.Show("Ошибка: неверный формат ввода", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
         }
 
